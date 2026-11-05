@@ -14,3 +14,12 @@ def get_product_details(product_id):
         if product["id"] == product_id:
             return product
     return None
+
+def filter_products(keyword):
+    keyword = keyword.strip().lower()
+    return [
+        product
+        for product in PRODUCTS
+        if keyword in product["name"].lower()
+    ]
+
